@@ -162,11 +162,12 @@ const tup2: readonly [number, string] = [10, "mark"];
 // typ2.push(5) --> this will land an error , cant push with readonly prop
 
 //never vs void keyword :
+
 const nev = (): void => {
     console.log("welcome"); // will return undefined js-fun
     return; // still valid , return undef and its void
 };
-const AlwaysLogs = (x) => {
+const AlwaysLogs = (x: number) => {
     while (true) {
         console.log("welcome");
     }
@@ -177,10 +178,13 @@ const ErrorHand = (msg: string): never => {
     throw Error(msg); //never cant have a reachble End point
 };
 
-//////////////////// vim
+// enurm
 
-let tsts: string = "sara";
+enum time {
+    one = 10,
+    two,
+    three,
+    four,
+}
 
-tsts = "mark";
-
-tsts = "tretert";
+console.log(`${time.three} ----------------`);
