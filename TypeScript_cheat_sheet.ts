@@ -180,11 +180,48 @@ const ErrorHand = (msg: string): never => {
 
 // enurm
 
+// it always start with 0 if You didnt intialise if a = 10, b = 11 ....
+enum intia {
+    a, // = 0
+    b, // = 1
+    c, // = 2
+    d, //=3
+}
 enum time {
     one = 10,
-    two,
-    three,
+    two = intia.b,
+    three, // can be a funtion three = foo()
     four,
 }
-
+// enums can refer to another enum
+console.log(time.two);
 console.log(`${time.three} ----------------`);
+
+//type assertion
+
+// this will work fine cause u init as a string and repeat is a string funciton
+let data: any = "hello";
+console.log((data as string).repeat(2));
+
+// this will not work cause u init data2 as string and it is a numb  and repeat is a not int funciton
+// let data2: any = 10;
+// console.log((data2 as string).repeat(2));
+
+//union type 
+type aa ={
+    one :number;
+    two:string;
+    three:boolean
+}
+type bb = {
+    four :string;
+}
+
+type cc = {
+    five :number
+}
+// for aa and cc only 
+
+type mixing = aa & cc // one , two , three , five ;
+
+``
