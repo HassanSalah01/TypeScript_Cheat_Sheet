@@ -225,3 +225,29 @@ console.log((data as string).repeat(2));
 // console.log((data2 as string).repeat(2));
 
 //union type
+type aa = {
+    one: number;
+    two: string;
+    three: boolean;
+};
+type bb = {
+    four: string;
+};
+
+type cc = {
+    five: number;
+};
+// for aa and cc only
+
+type mixing = aa & cc; // one , two , three , five ;
+
+// classes In typeScript
+
+class Person {
+    name: string;
+    age: number;
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+}
