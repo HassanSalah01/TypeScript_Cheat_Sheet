@@ -80,6 +80,19 @@ interface Users {
     name: string;
     age?: number; // here age is not mandatory
 }
+// add another prop to the interface
+interface Users {
+    address?: string;
+}
+// extend interface
+interface Users2 extends Users {
+    grades: number; //User2 got {name , age ,grade}
+}
+
+// interface can extend multiple interfaces
+interface Users3 extends Users, Users2 {
+    phoneNumber: number | string;
+}
 
 const user4: Users = {
     name: "john",
@@ -96,12 +109,16 @@ interface users {
     name: string;
     age: number;
     getName(): string;
+    getage(): void;
 }
 const user6: users = {
     name: "sara",
     age: 30,
     getName() {
         return this.name;
+    },
+    getage() {
+        console.log("welcome");
     },
 };
 console.log(user6.getName() + " inside The function");
@@ -207,21 +224,4 @@ console.log((data as string).repeat(2));
 // let data2: any = 10;
 // console.log((data2 as string).repeat(2));
 
-//union type 
-type aa ={
-    one :number;
-    two:string;
-    three:boolean
-}
-type bb = {
-    four :string;
-}
-
-type cc = {
-    five :number
-}
-// for aa and cc only 
-
-type mixing = aa & cc // one , two , three , five ;
-
-``
+//union type
