@@ -251,3 +251,33 @@ class Person {
         this.age = age;
     }
 }
+// you can use variable Type As Normal OOP (private , protected , public by default)
+class Person2 {
+    private name: string;
+    private age: number;
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+    //setter and getter ==>
+    set names(x: string) {
+        this.name = x;
+    }
+    get names2(): string {
+        return this.name;
+    }
+}
+// Remmber ==> Without ()
+const p = new Person2("kik", 5);
+console.log(p.names2);
+p.names = "rooror";
+console.log(p.names2);
+
+
+// static Fields
+class Person1{
+    static cout :number ;
+    constructor(){
+        Person1.cout ++;
+    }
+}
