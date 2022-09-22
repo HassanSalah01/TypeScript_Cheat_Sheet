@@ -273,11 +273,22 @@ console.log(p.names2);
 p.names = "rooror";
 console.log(p.names2);
 
-
 // static Fields
-class Person1{
-    static cout :number ;
-    constructor(){
-        Person1.cout ++;
+class Person1 {
+    static cout: number;
+    constructor() {
+        Person1.cout++;
     }
+}
+
+// Classes implement Interface
+interface data {
+    name: string;
+    age?: number;
+}
+
+class Peron3 implements data {
+    // name :string;
+    // age:number;
+    constructor(public name: string) {}
 }
